@@ -1,3 +1,9 @@
+export interface Restaurant {
+  name: string;
+  wazeLink: string;
+  googleMapsLink?: string;
+}
+
 export interface Hero {
   id: string;
   name: string;
@@ -10,8 +16,36 @@ export interface Hero {
   fullStory: string[];
   favoriteFood: string;
   favoriteFoodStory: string;
+  mealImage?: string; // path to meal photo
+  restaurants: Restaurant[];
+  instagramLink?: string;
   quote: string;
 }
+
+// Restaurant definitions
+const CAFE_GAN_SIPUR: Restaurant = {
+  name: "קפה גן סיפור",
+  wazeLink: "https://waze.com/ul/hsv9hc1vck",
+  googleMapsLink: "https://maps.app.goo.gl/SRQxatDJgbGUUgxY6",
+};
+
+const PICOLINO: Restaurant = {
+  name: "פיקולינו",
+  wazeLink: "https://waze.com/ul/hsv9hc3qq8",
+  googleMapsLink: "https://maps.app.goo.gl/UgcsCYxtPUWt7NzM6",
+};
+
+const DOLPHIN_YAM: Restaurant = {
+  name: "דולפין ים",
+  wazeLink: "https://waze.com/ul/hsv9hc3r5w",
+  googleMapsLink: "https://maps.app.goo.gl/w9n9deNyDsD8WzHM6",
+};
+
+const SUSHI_REHAVIA: Restaurant = {
+  name: "סושי רחביה",
+  wazeLink: "https://waze.com/ul/hsv9h9qqx7",
+  googleMapsLink: "https://maps.app.goo.gl/UwrqV1XeSBZUQzR38",
+};
 
 export const heroes: Hero[] = [
   {
@@ -30,8 +64,11 @@ export const heroes: Hero[] = [
       "נועם בחר לשרת כלוחם בחטיבת כפיר בנצח יהודה. הוא לחם שנתיים שלמות והיה בהרבה שמירות, פעילויות מבצעיות, תמרונים. נועם היה מפקד — הוא פיקד על חברים שלו מפני שסמכו עליו וידעו שהוא יכול לעשות את זה. והוא עשה את זה בגדול.",
       "נועם נפל בבית חנון באמצע פעילות מבצעית ב־7.7.2025.",
     ],
-    favoriteFood: "ספגטי",
-    favoriteFoodStory: "הספגטי שמוגש לכם היום היה מנה אהובה על נועם אהרון. אנחנו מזמינים אתכם להכיר ולהיזכר בחיוך הממיס שלו.",
+    favoriteFood: "פסטה מוקרמת",
+    favoriteFoodStory: "הפסטה מוקרמת שמוגשת לכם היום הייתה מנה אהובה על נועם אהרון. אנחנו מזמינים אתכם להכיר ולהיזכר בחיוך הממיס שלו.",
+    mealImage: "", // TODO: add meal image path
+    restaurants: [CAFE_GAN_SIPUR, PICOLINO],
+    instagramLink: "https://www.instagram.com/remember_noam?igsh=MXNibDZ2MHAweHJwcw==",
     quote: "אנחנו אוהבים אותו וגאים בו על הכל. אנחנו כאן כדי להמשיך אותו — את החיוך שלו, הערכים הטובים שהיו לו ואת כל מה שהוא הביא איתו.",
   },
   {
@@ -51,6 +88,9 @@ export const heroes: Hero[] = [
     ],
     favoriteFood: "סטייק",
     favoriteFoodStory: "הסטייק שמוגש לכם היום היה מנה אהובה על דנילה. אנחנו מזמינים אתכם להכיר ולהיזכר בלב הענק שלו.",
+    mealImage: "", // TODO: add meal image path
+    restaurants: [DOLPHIN_YAM],
+    instagramLink: "https://www.instagram.com/remember_danila?igsh=MWQ1czU2aDgyNW9ueQ==", 
     quote: "היית לי הקשר הכי קרוב והכי אמיתי. היית אדם טוב, שמח, דואג, חי. אתה תמיד בלב שלי. ואני תמיד אוהבת אותך. — אחותו",
   },
   {
@@ -70,6 +110,9 @@ export const heroes: Hero[] = [
     ],
     favoriteFood: "המבורגר",
     favoriteFoodStory: "שחר היה הולך עם גיסו לאכול המבורגר בכל מקום אפשרי והיה מדרג בשניצלים: 5 שניצלים משמעו ההמבורגר הטוב ביותר! בזמן שאתם אוכלים מהמנה אנו מזמינים אתכם להיזכר בשחר, שביקש בצוואתו: 'תאהבו את עצמכם ואת העולם וכאשר תקרינו החוצה שמחה יווצר לאט לאט מעגל שייצור עולם טוב יותר.'",
+    mealImage: "", // TODO: add meal image path
+    restaurants: [DOLPHIN_YAM],
+    instagramLink: "https://www.instagram.com/remember_shachar?igsh=MWUzdWMycHlxNnY0OQ==", // TODO: add instagram link
     quote: "המידה הגדולה ביותר אשר יכולה להיות לאדם היא היכולת לשמח אדם אחר.",
   },
   {
@@ -87,8 +130,11 @@ export const heroes: Hero[] = [
       "במרץ 2019 התגייס לגדוד 'שקד' בחטיבת גבעתי. יצא לקורס מ\"כים וחזר לגדוד כמפקד כיתה ובהמשך כסמל מחלקה. הדר בלט ברגישותו לחייליו, דאג לרווחתם ושימש כחונך ומנטור לחיילים בודדים.",
       "בבוקר השבעה באוקטובר, עוד בטרם קיבל קריאה, אסף הדר את המדים והציוד והצטרף לגדוד המילואים שלו. הוא שירת כמפקד כיתה לאורך המלחמה, עד לנפילתו בקרב במרכז רצועת עזה באסון אל-מע'אזי. בן 23 בנופלו.",
     ],
-    favoriteFood: "אסדו",
-    favoriteFoodStory: "האסדו שמוגש לכם היום היה מנה אהובה על הדר. אנחנו מזמינים אתכם להכיר ולהיזכר בהדר שהשאיר חותם של טוב בכל מקום שאליו הגיע.",
+    favoriteFood: "טורטליני אסאדו",
+    favoriteFoodStory: "האסאדו שמוגש לכם היום היה מנה אהובה על הדר. אנחנו מזמינים אתכם להכיר ולהיזכר בהדר שהשאיר חותם של טוב בכל מקום שאליו הגיע.",
+    mealImage: "", // TODO: add meal image path
+    restaurants: [DOLPHIN_YAM],
+    instagramLink: "https://www.instagram.com/remember_hadar_kapeluk?igsh=eXNtZ3NhaTdhaXlj", // TODO: add instagram link
     quote: "חיוך הוא השפה של כולם — תחייך אל העולם, והעולם יחייך אליך בחזרה.",
   },
   {
@@ -105,8 +151,11 @@ export const heroes: Hero[] = [
       "עמית היה סמל לנחישות, לאהבת הארץ ולבחירה בדרך של נתינה ומשמעות. מעבר להישגיו ורוח הלחימה שלו, הוא היה גם אדם עם לב גדול ואהבות פשוטות.",
       "בזיכרון הדברים הקטנים — הטעם, הריח, הרגעים — נשאר האדם שהוא היה.",
     ],
-    favoriteFood: "עוגת תפוזים ועוגת גבינה",
+    favoriteFood: "עוגת גבינה",
     favoriteFoodStory: "עמית אהב מאוד עוגת תפוזים ועוגת גבינה עם פירורים. בזיכרון הדברים הקטנים האלה — הטעם, הריח, הרגעים — נשאר האדם שהוא היה.",
+    mealImage: "", // TODO: add meal image path
+    restaurants: [CAFE_GAN_SIPUR, PICOLINO],
+    instagramLink: "https://www.instagram.com/amit.benygal1?igsh=eHljMmJwaHd4d2J0", 
     quote: "סמל לנחישות, לאהבת הארץ ולבחירה בדרך של נתינה ומשמעות.",
   },
   {
@@ -126,6 +175,9 @@ export const heroes: Hero[] = [
     ],
     favoriteFood: "שקשוקה",
     favoriteFoodStory: "השקשוקה המוגשת לכם היום הייתה מנה אהובה על ענר. ענר מאוד אהב לאכול שקשוקה אבל גם להכין אותה בעצמו עם חברים ובבית. בזמן שאתם טועמים מהמנה, אנו מזמינים אתכם להכיר את ענר — לא רק כגיבור ישראל, אלא כצעיר ירושלמי שאהב מוזיקה ויצירה, עם ערבות הדדית ואהבת אדם.",
+    mealImage: "", // TODO: add meal image path
+    restaurants: [CAFE_GAN_SIPUR],
+    instagramLink: "https://anershapiro.com/music/",
     quote: "אני אדם שמאמין בשינוי / עזוב שינוי / מספיק להיות אדם שמאמין סתם... / מספיק שתהיה אדם.",
   },
   {
@@ -143,8 +195,11 @@ export const heroes: Hero[] = [
       "את תפקיד האח הבכור לקח מאוד ברצינות. היה אח חם, מחבק ועוטף, מקשיב, מכיל, מייעץ ומגונן, ואהב לצחוק עם אחיו ולהשתובב איתם.",
       "ב-1.5.2024 התגייס לצה\"ל וסיים את הטירונות כחניך מצטיין. סיים קורס טכנולוגי כ'מצטיין מופת' וסופח לגדוד 13 של חטיבת גולני. בערב ראש השנה תשפ\"ה, 3.10.2024, פגע כטב\"ם נפץ במבנה המגורים שבו ישן. בן 19 היה בנופלו.",
     ],
-    favoriteFood: "פסטה",
+    favoriteFood: "פסטה רוזה / סושי",
     favoriteFoodStory: "הפסטה שמוגשת לכם היום הייתה מנה אהובה על טל. אנחנו מזמינים אתכם להכיר ולהיזכר באכפתיות שלו לאחרים.",
+    mealImage: "", // TODO: add meal image path
+    restaurants: [CAFE_GAN_SIPUR, PICOLINO, SUSHI_REHAVIA],
+    instagramLink: "https://www.instagram.com/remember_tal_dror?igsh=MXRhaTBwZGh2OGVwYg==", 
     quote: "אני אוהב אתכם עד החלל בחזקת אין סוף.",
   },
   {
@@ -164,6 +219,9 @@ export const heroes: Hero[] = [
     ],
     favoriteFood: "?",
     favoriteFoodStory: "אנחנו מזמינים אתכם להכיר ולהיזכר בנדב — אדם שראה בכל אתגר הזדמנות ולא ויתר אף פעם.",
+    mealImage: "", // TODO: add meal image path
+    restaurants: [], // No restaurant assigned yet
+    instagramLink: "https://www.instagram.com/remember_nadav?igsh=MThlZGt4dHhvYnUx",
     quote: "יום יבוא והחיים יחלפו לכם מול העיניים. תוודאו שהם יהיו שווים צפייה.",
   },
   {
@@ -171,7 +229,7 @@ export const heroes: Hero[] = [
     name: "בן זוסמן",
     years: "2001 – 2023",
     unit: "גדוד הנדסה קרבית 601, עוצבת עקבות הברזל",
-    rank: 'רב"ס',
+    rank: 'רס"ל (במיל\')',
     age: 22,
     image: "/images/ben.jpg",
     shortBio: "ספורטאי מצטיין, שחקן טניס שולחן ברמה גבוהה, בעל דרך ארץ ומסודר. חי בתחושת שליחות וגאווה.",
@@ -183,6 +241,9 @@ export const heroes: Hero[] = [
     ],
     favoriteFood: "מעורב",
     favoriteFoodStory: "המעורב שמוגש לכם היום היה מנה אהובה על בן. אנחנו מזמינים אתכם להכיר ולהיזכר בבן. הוא ביקש: 'אם אתם יושבים שבעה, תהפכו אותה לשבוע של חברים, משפחה וכיף. שיהיה אוכל, בשרי כמובן, בירות, שתייה מתוקה, גרעינים, תה וכמובן כמובן עוגיות של אמא.'",
+    mealImage: "", // TODO: add meal image path
+    restaurants: [], // No restaurant assigned yet
+    instagramLink: "", // TODO: add instagram link
     quote: "אני מלא גאווה ותחושת שליחות ותמיד אמרתי שאם אצטרך למות הלוואי וזה יהיה בהגנה על אחרים ועל המדינה.",
   },
   {
@@ -200,8 +261,11 @@ export const heroes: Hero[] = [
       "התגייס לחטיבת גבעתי, התקבל לסיירת ושירת בפלגת 'עורב'. עידו אהב את השירות וחש תחושת שליחות גדולה.",
       "ביום 24.2.24 שהה עם יחידתו באזור דרום רצועת עזה. כאשר חבריו נקלעו למארב, עידו קפץ ראשון לחלץ נפגעים ונהרג מירי מחבלים. חבריו ומפקדיו מספרים שאלמלא עידו — כל החיילים במבנה היו נהרגים. בן 20 בנופלו.",
     ],
-    favoriteFood: "?",
+    favoriteFood: "טוסט יווני בגל",
     favoriteFoodStory: "אנחנו מזמינים אתכם להכיר את החייל עידו — אדם טוב לב ואמפתי אשר הייתה בו אהבה לזולת ולכל אדם. הוא תמיד חייך וכבש לבבות של אנשים בחיוכו ואישיותו.",
+    mealImage: "", // TODO: add meal image path
+    restaurants: [CAFE_GAN_SIPUR],
+    instagramLink: "https://www.instagram.com/remember_ido_zrihen?igsh=MWl0Ym4wcmx3d3Z6YQ==", 
     quote: "יש מישהו למעלה עם תוכנית מסודרת! אנחנו סתם בלחץ, הכול מתוכנן והכל לטובה.",
   },
 ];

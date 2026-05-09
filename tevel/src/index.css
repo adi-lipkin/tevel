@@ -337,3 +337,158 @@ body {
 .footer__logo--standwithus:hover,
 .footer__logo--tevel:hover,
 .footer__logo--mana:hover { opacity: 1; }
+/* ── Add these rules to the bottom of index.css ── */
+
+/* Instagram link */
+.detail__instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--text-muted);
+  font-size: 13px;
+  text-decoration: none;
+  margin-bottom: 20px;
+  padding: 6px 14px 6px 10px;
+  border: 1px solid rgba(90,90,72,0.2);
+  border-radius: 20px;
+  width: fit-content;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+.detail__instagram:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(201,160,48,0.06);
+}
+
+/* Meal image inside food box */
+.food-box__meal-img {
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  display: block;
+}
+
+/* Restaurant waze links */
+.food-box__restaurants {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(201,160,48,0.15);
+}
+.food-box__restaurants-label {
+  font-size: 13px;
+  color: var(--text-light);
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+.food-box__restaurants-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.restaurant-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--green-dark);
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-family: inherit;
+  padding: 9px 18px;
+  border-radius: 8px;
+  transition: background 0.2s, transform 0.15s;
+}
+.restaurant-btn:hover {
+  background: var(--green-mid);
+  transform: translateY(-1px);
+}
+
+/* ── Add these rules to the bottom of index.css ── */
+
+/* Instagram link */
+.detail__instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--text-muted);
+  font-size: 13px;
+  text-decoration: none;
+  margin-bottom: 20px;
+  padding: 6px 14px 6px 10px;
+  border: 1px solid rgba(90,90,72,0.2);
+  border-radius: 20px;
+  width: fit-content;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+.detail__instagram:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(201,160,48,0.06);
+}
+
+/* Meal image inside food box */
+.food-box__meal-img {
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  display: block;
+}
+
+/* Restaurant waze links */
+.food-box__restaurants {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(201,160,48,0.15);
+}
+.food-box__restaurants-label {
+  font-size: 13px;
+  color: var(--text-light);
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+.food-box__restaurants-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.restaurant-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--green-dark);
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-family: inherit;
+  padding: 9px 18px;
+  border-radius: 8px;
+  transition: background 0.2s, transform 0.15s;
+}
+.restaurant-btn:hover {
+  background: var(--green-mid);
+  transform: translateY(-1px);
+}
+
+/* Footer Instagram link */
+.footer__social {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(201,160,48,0.15);
+}
+.footer__instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: rgba(201,160,48,0.7);
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 1px;
+  transition: color 0.2s;
+}
+.footer__instagram:hover {
+  color: var(--gold-light);
+}
