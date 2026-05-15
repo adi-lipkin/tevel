@@ -17,16 +17,18 @@ function HeroCard({ hero, onClick }: { hero: Hero; onClick: () => void }) {
 
   return (
     <article className="card" onClick={onClick}>
-      {!imgErr ? (
-        <img
-          className="card__img"
-          src={asset(hero.image)}
-          alt={hero.name}
-          onError={() => setImgErr(true)}
-        />
-      ) : (
-        <div className="card__img-fallback">✦</div>
-      )}
+      <div className="card__img-wrap">
+        {!imgErr ? (
+          <img
+            className="card__img"
+            src={asset(hero.image)}
+            alt={hero.name}
+            onError={() => setImgErr(true)}
+          />
+        ) : (
+          <div className="card__img-fallback">✦</div>
+        )}
+      </div>
       <div className="card__body">
         <p className="card__years">{hero.years}</p>
         <h2 className="card__name">{hero.name}</h2>
@@ -74,7 +76,6 @@ function HeroDetail({ hero, onBack }: { hero: Hero; onBack: () => void }) {
               {hero.rank} · {hero.unit} · בן {hero.age} בנופלו
             </p>
 
-            {/* Instagram link */}
             {hero.instagramLink && (
               <a
                 className="detail__instagram"
@@ -83,7 +84,7 @@ function HeroDetail({ hero, onBack }: { hero: Hero; onBack: () => void }) {
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
               >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                 </svg>
                 פרופיל אינסטגרם
@@ -99,11 +100,9 @@ function HeroDetail({ hero, onBack }: { hero: Hero; onBack: () => void }) {
           <p key={i} className="story-para">{para}</p>
         ))}
 
-        {/* Food section */}
         <div className="food-box">
           <p className="food-box__title">🍽 {hero.favoriteFood} — המנה האהובה</p>
 
-          {/* Meal image */}
           {hero.mealImage && !mealImgErr && (
             <img
               className="food-box__meal-img"
@@ -115,7 +114,6 @@ function HeroDetail({ hero, onBack }: { hero: Hero; onBack: () => void }) {
 
           <p className="food-box__text">{hero.favoriteFoodStory}</p>
 
-          {/* Restaurant links */}
           {hero.restaurants && hero.restaurants.length > 0 && (
             <div className="food-box__restaurants">
               <p className="food-box__restaurants-label">🗺 ניתן למצוא במסעדה:</p>
@@ -142,7 +140,7 @@ function HeroDetail({ hero, onBack }: { hero: Hero; onBack: () => void }) {
       </div>
 
       <footer className="footer">
-        יהי זכרם ברוך
+        <div style={{ position: 'relative' }}>יהי זכרם ברוך</div>
         <div className="footer__social">
           <a
             href="https://www.instagram.com/tevel_jerusalem?igsh=MnRpMjNuMGhoZWFk"
@@ -150,7 +148,7 @@ function HeroDetail({ hero, onBack }: { hero: Hero; onBack: () => void }) {
             rel="noopener noreferrer"
             className="footer__instagram"
           >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
             </svg>
             @tevel_jerusalem
@@ -173,19 +171,21 @@ export default function App() {
   return (
     <div>
       <header className="header">
-        <div className="header__logos">
-          <div className="header__logo-left">
-            <img src={LOGOS.standwithus} alt="StandWithUs" className="header__logo--standwithus" />
+        <div className="header__inner">
+          <div className="header__logos">
+            <div className="header__logo-left">
+              <img src={LOGOS.standwithus} alt="StandWithUs" className="header__logo--standwithus" />
+            </div>
+            <div className="header__logo-center">
+              <img src={LOGOS.mana} alt="מנה לזכרם" className="header__logo--mana" />
+            </div>
+            <div className="header__logo-right">
+              <img src={LOGOS.tevel} alt="תבל" className="header__logo--tevel" />
+            </div>
           </div>
-          <div className="header__logo-center">
-            <img src={LOGOS.mana} alt="מנה לזכרם" className="header__logo--mana" />
-          </div>
-          <div className="header__logo-right">
-            <img src={LOGOS.tevel} alt="תבל" className="header__logo--tevel" />
-          </div>
+          <h1 className="header__title">מנה לזכרם</h1>
+          <p className="header__sub">לזכר גיבורינו שנפלו</p>
         </div>
-        <h1 className="header__title">מנה לזכרם</h1>
-        <p className="header__sub">לזכר גיבורינו שנפלו</p>
       </header>
       <div className="gold-line" />
 
@@ -196,7 +196,7 @@ export default function App() {
       </main>
 
       <footer className="footer">
-        יהי זכרם ברוך
+        <div style={{ position: 'relative' }}>יהי זכרם ברוך</div>
         <div className="footer__social">
           <a
             href="https://www.instagram.com/tevel_jerusalem?igsh=MnRpMjNuMGhoZWFk"
@@ -204,7 +204,7 @@ export default function App() {
             rel="noopener noreferrer"
             className="footer__instagram"
           >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
             </svg>
             @tevel_jerusalem
