@@ -42,9 +42,14 @@ const DOLPHIN_YAM: Restaurant = {
 };
 
 const SUSHI_REHAVIA: Restaurant = {
-  name: "סושי רחביה",
-  wazeLink: "https://waze.com/ul/hsv9h9qqx7",
-  googleMapsLink: "https://maps.app.goo.gl/UwrqV1XeSBZUQzR38",
+  name: "סושיה",
+  wazeLink: "https://waze.com/ul/hsv9hc36jg",
+  googleMapsLink: "https://maps.app.goo.gl/HpKQYSYUqgK2SAycA",
+};
+const SAVTAYAMIMA: Restaurant = {
+  name: "סבתא ימימה",
+  wazeLink: "https://waze.com/ul/hsv9hcjpx7",
+  googleMapsLink: "https://maps.app.goo.gl/bzTMj6znnKCDLP7h9",
 };
 
 export const heroes: Hero[] = [
@@ -68,7 +73,7 @@ export const heroes: Hero[] = [
     favoriteFood: "פסטה מוקרמת",
     favoriteFoodStory: "הפסטה מוקרמת שמוגשת לכם היום הייתה מנה אהובה על נועם אהרון. אנחנו מזמינים אתכם להכיר ולהיזכר בחיוך הממיס שלו.",
     mealImage: "", // TODO: add meal image path
-    restaurants: [CAFE_GAN_SIPUR, PICOLINO],
+    restaurants: [ PICOLINO],
     instagramLink: "https://www.instagram.com/remember_noam?igsh=MXNibDZ2MHAweHJwcw==",
     quote: "אנחנו אוהבים אותו וגאים בו על הכל. אנחנו כאן כדי להמשיך אותו — את החיוך שלו, הערכים הטובים שהיו לו ואת כל מה שהוא הביא איתו.",
   },
@@ -88,10 +93,10 @@ export const heroes: Hero[] = [
       "הוא היה אהוב ואהוד. אדם שידע להעניק לסובבים אותו חום, שמחה ותחושת ביטחון. הוא הצחיק, הקשיב, חיבק – והיה לנפש קרובה לכל מי שפגש בו, אפילו לרגע. עם לב ענק, נשמה רכה ויכולת נדירה לראות את האחר, דנילה הפך למרכז של אור בכל מעגל שבו היה.",
       "ביום י\"א בטבת התשפ\"ה, 11 בינואר 2025, נפל דנילה בקרב קשה בבית חאנון שבצפון רצועת עזה, כשהוא לוחם על אדמת הארץ שבחר בה, מגן בגופו ובנפשו על עמו."
     ],
-    favoriteFood: "סטייק",
-    favoriteFoodStory: "הסטייק שמוגש לכם היום היה מנה אהובה על דנילה. אנחנו מזמינים אתכם להכיר ולהיזכר בלב הענק שלו.",
+    favoriteFood: "שניצל",
+    favoriteFoodStory: "השניצל שמוגש לכם היום היה מנה אהובה על דנילה. אנחנו מזמינים אתכם להכיר ולהיזכר בלב הענק שלו.",
     mealImage: "", // TODO: add meal image path
-    restaurants: [DOLPHIN_YAM],
+    restaurants: [SAVTAYAMIMA],
     instagramLink: "https://www.instagram.com/remember_danila?igsh=MWQ1czU2aDgyNW9ueQ==", 
     quote: "היית לי הקשר הכי קרוב והכי אמיתי. היית אדם טוב, שמח, דואג, חי. אתה תמיד בלב שלי. ואני תמיד אוהבת אותך. — אחותו",
   },
@@ -187,10 +192,10 @@ export const heroes: Hero[] = [
       "מפקדיו בגדוד סיפרו שתוך זמן קצר השתלב במחלקה, עשה כל משימה בהצטיינות, תוך שיתוף פעולה עם חבריו לצוות, ומילא תפקיד משמעותי מאוד במחלקת התקשוב.",
       "בערב ראש השנה תשפ\"ה, 3.10.2024, שהה טל בבסיס ברמת הגולן. בסביבות השעה 23:00 שוחח עם הוריו ולאחר מכן הלך לישון. לקראת השעה 3:00 בלילה פגע כטב\"ם נפץ במבנה המגורים שבו ישן. טל נפצע אנושות ופונה לבית החולים \"רמב\"ם\" בחיפה, שם נקבע מותו. בן 19 היה בנופלו."
     ],
-    favoriteFood: "פסטה רוזה / סושי",
+    favoriteFood: "סושי",
     favoriteFoodStory: "הפסטה שמוגשת לכם היום היתה מנה אהובה על טל. אנחנו מזמינים אתכם להכיר ולהיזכר באכפתיות שלו לאחרים.",
     mealImage: "", // TODO: add meal image path
-    restaurants: [CAFE_GAN_SIPUR, PICOLINO, SUSHI_REHAVIA],
+    restaurants: [ SUSHI_REHAVIA],
     instagramLink: "https://www.instagram.com/remember_tal_dror?igsh=MXRhaTBwZGh2OGVwYg==", 
     quote: "אני אוהב אתכם עד החלל בחזקת אין סוף.",
   },
@@ -282,13 +287,13 @@ export const heroes: Hero[] = [
     fullStory: [
       "עמית בן יגאל בן 21 בנופלו עמית ספוראטי, מצטיין ואלוף ישראל באתלטיקה, בן יחיד ולמרות זאת בחר להתגייס לחטיבת גולני ולשרת כלוחם בסיירת גולני, עד יומו האחרון.",
       "עמית היה סמל לנחישות, לאהבת הארץ ולבחירה בדרך של נתינה ומשמעות. מעבר להישגיו ולרוח הלחימה שלו, הוא היה גם אדם עם לב גדול ואהבות פשוטות",
-      "אהב מאוד עוגת תפוזים, ועוגת גבינה עם פירורים.",
+      "אהב מאוד עוגת גבינה עם פירורים.",
       "בזיכרון הדברים הקטנים האלה -הטעם, הריח, הרגעים נשאר האדם שהוא היה."
     ],
     favoriteFood: "עוגת גבינה",
-    favoriteFoodStory: "עמית אהב מאוד עוגת תפוזים, ועוגת גבינה עם פירורים. בזיכרון הדברים הקטנים האלה -הטעם, הריח, הרגעיםנשאר האדם שהוא היה.",
+    favoriteFoodStory: "עמית אהב מאוד עוגת גבינה עם פירורים. בזיכרון הדברים הקטנים האלה -הטעם, הריח, הרגעים נשאר האדם שהוא היה.",
     mealImage: "", // TODO: add meal image path
-    restaurants: [CAFE_GAN_SIPUR, PICOLINO],
+    restaurants: [PICOLINO],
     instagramLink: "https://www.instagram.com/amit.benygal1?igsh=eHljMmJwaHd4d2J0", 
     quote: "סמל לנחישות, לאהבת הארץ ולבחירה בדרך של נתינה ומשמעות.",
   },
