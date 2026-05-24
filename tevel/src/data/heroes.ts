@@ -51,6 +51,11 @@ const SAVTAYAMIMA: Restaurant = {
   wazeLink: "https://waze.com/ul/hsv9hcjpx7",
   googleMapsLink: "https://maps.app.goo.gl/bzTMj6znnKCDLP7h9",
 };
+const THAILANDI: Restaurant = {
+  name: "תילאנדי",
+  wazeLink: " https://waze.com/ul/hsv9hc3rxr",
+  googleMapsLink: "https://share.google/weNj5kOmlDv4bcCRo",
+};
 
 export const heroes: Hero[] = [
   {
@@ -221,10 +226,10 @@ export const heroes: Hero[] = [
       "הוא שירת כסמל מחלקה בגדוד 121 של חטיבה 8 (חטיבת \"הזקן\") ולחם בגבורה במשך חודשים ארוכים.",
       "רב-סמל ראשון נדב אלחנן נולר נפל בקרב ביום כ\"ו בסיוון תשפ\"ד (1.7.2024). בן שלושים בנופלו. הובא למנוחות בחלקה הצבאית של בית העלמין בקרני שומרון. הותיר אחריו אישה ובן, אב וארבעה אחים ואחיות."
     ],
-    favoriteFood: "?",
-    favoriteFoodStory: "אנחנו מזמינים אתכם להכיר ולהיזכר בנדב — אדם שראה בכל אתגר הזדמנות ולא ויתר אף פעם.",
+    favoriteFood: "קובה חמוסטה",
+    favoriteFoodStory: "הקובה חמוסטה שמוגש לכם היום היה המנה האהובה על נדב. אנחנו מזמינים אתכם להכיר ולהיזכר בנדב — אדם שראה בכל אתגר הזדמנות ולא ויתר אף פעם.",
     mealImage: "", // TODO: add meal image path
-    restaurants: [], // No restaurant assigned yet
+    restaurants: [SAVTAYAMIMA], // No restaurant assigned yet
     instagramLink: "https://www.instagram.com/remember_nadav?igsh=MThlZGt4dHhvYnUx",
     quote: "יום יבוא והחיים יחלפו לכם מול העיניים. תוודאו שהם יהיו שווים צפייה.",
   },
@@ -246,10 +251,10 @@ export const heroes: Hero[] = [
       "\"אני מלא גאווה ותחושת שליחות ותמיד אמרתי שאם אצטרך למות הלוואי וזה יהיה בהגנה על אחרים ועל המדינה\"",
       "בצבא בן שירת כרס\"ל (במיל') בגדוד ההנדסה הקרבית 601, עוצבת 'עקבות הברזל' (401). ביום 7.10.2023 התגייס למילואים ושירת בחיל הנדסה. נפל בקרב ביום כ' בכסלו תשפ\" 3.12.2023 בן עשרים ושתיים היה בנופלו."
     ],
-    favoriteFood: "?",
-    favoriteFoodStory: "\"אם חס וחלילה אתם יושבים שבעה, תהפכו אותה לשבוע של חברים, משפחה וכיף. שיהיה אוכל, בשרי כמובן, בירות, שתייה מתוקה, גרעינים, תה וכמובן כמובן עוגיות של אמא\" המעורב שמוגש לכם היום היה מנה אהובה על בן. אנחנו מזמינים אתכם להכיר ולהיזכר בבן.",
+    favoriteFood: "כנפיים",
+    favoriteFoodStory: "\"אם חס וחלילה אתם יושבים שבעה, תהפכו אותה לשבוע של חברים, משפחה וכיף. שיהיה אוכל, בשרי כמובן, בירות, שתייה מתוקה, גרעינים, תה וכמובן כמובן עוגיות של אמא\" הכנפיים שמוגשת לכם היום הייתה מנה אהובה על בן. אנחנו מזמינים אתכם להכיר ולהיזכר בבן.",
     mealImage: "", // TODO: add meal image path
-    restaurants: [], // No restaurant assigned yet
+    restaurants: [THAILANDI], // No restaurant assigned yet
     instagramLink: "", // TODO: add instagram link
     quote: "אני מלא גאווה ותחושת שליחות ותמיד אמרתי שאם אצטרך למות הלוואי וזה יהיה בהגנה על אחרים ועל המדינה.",
   },
