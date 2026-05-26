@@ -11,6 +11,28 @@ const LOGOS = {
   tevel:       asset("images/tevellogo.jpg"),
 };
 
+// ── Icons ─────────────────────────────────────────────────────────────────────
+function WazeIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="32" cy="32" r="32" fill="#05C8F7"/>
+      <path d="M32 10C20.95 10 12 18.95 12 30c0 6.2 2.8 11.7 7.2 15.4l-1.5 5.6 5.8-1.4C25.3 50.5 28.6 51.3 32 51.3c11.05 0 20-8.95 20-20S43.05 10 32 10z" fill="white"/>
+      <circle cx="25" cy="37" r="2.5" fill="#333"/>
+      <circle cx="39" cy="37" r="2.5" fill="#333"/>
+      <path d="M26 29c0-1.1.9-2 2-2h8c1.1 0 2 .9 2 2" stroke="#333" strokeWidth="2" fill="none" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
+function GoogleMapsIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+      <path d="M24 4C16.27 4 10 10.27 10 18c0 10.5 14 26 14 26s14-15.5 14-26c0-7.73-6.27-14-14-14z" fill="#EA4335"/>
+      <circle cx="24" cy="18" r="5.5" fill="white"/>
+    </svg>
+  );
+}
+
 // ── HeroCard ──────────────────────────────────────────────────────────────────
 function HeroCard({ hero, onClick }: { hero: Hero; onClick: () => void }) {
   const [imgErr, setImgErr] = useState(false);
@@ -119,19 +141,40 @@ function HeroDetail({ hero, onBack }: { hero: Hero; onBack: () => void }) {
               <p className="food-box__restaurants-label">🗺 ניתן למצוא במסעדה:</p>
               <div className="food-box__restaurants-list">
                 {hero.restaurants.map((rest) => (
-                  <a
-                    key={rest.name}
-                    className="restaurant-btn"
-                    href={rest.wazeLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style={{ flexShrink: 0 }}>
-                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                    </svg>
-                    {rest.name}
-                  </a>
+                  <div key={rest.name} className="restaurant-entry">
+                    <span className="restaurant-entry__name">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style={{ flexShrink: 0, opacity: 0.5 }}>
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                      </svg>
+                      {rest.name}
+                    </span>
+                    <div className="restaurant-entry__nav">
+                      <a
+                        className="nav-btn nav-btn--waze"
+                        href={rest.wazeLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        title="פתח ב-Waze"
+                      >
+                        <WazeIcon />
+                        <span>Waze</span>
+                      </a>
+                      {rest.googleMapsLink && (
+                        <a
+                          className="nav-btn nav-btn--gmaps"
+                          href={rest.googleMapsLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          title="פתח ב-Google Maps"
+                        >
+                          <GoogleMapsIcon />
+                          <span>Maps</span>
+                        </a>
+                      )}
+                    </div>
+                  </div>
                 ))}
               </div>
             </div>

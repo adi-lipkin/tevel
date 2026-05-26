@@ -743,3 +743,56 @@ body::before {
   background: rgba(201,160,48,0.2);
   color: var(--green-dark);
 }
+
+/* Restaurant entry row */
+.restaurant-entry {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+}
+.restaurant-entry:last-child {
+  border-bottom: none;
+}
+.restaurant-entry__name {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* Navigation buttons */
+.restaurant-entry__nav {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.15s, transform 0.15s;
+  white-space: nowrap;
+}
+.nav-btn:hover {
+  opacity: 0.82;
+  transform: translateY(-1px);
+}
+.nav-btn--waze {
+  background: #05C8F7;
+  color: #fff;
+}
+.nav-btn--gmaps {
+  background: #fff;
+  color: #444;
+  border: 1px solid #ddd;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
